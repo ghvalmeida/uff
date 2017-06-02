@@ -1,0 +1,7 @@
+mkdir classes
+javac -classpath /usr/lib/hadoop/*:/usr/lib/hadoop/client-0.20/* -d classes WordCount.java
+jar -cvf triangles.jar -C class .
+hadoop fs -rmr /output/shakespeare
+hadoop jar wordcount.jar org.myorg.WordCount /input/shakespeare /output/shakespeare
+hadoop fs -ls /output/shakespeare
+hadoop fs -cat /output/shakespeare/part*
